@@ -7,42 +7,87 @@
     <title>Muse · Ilk</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script src="pace.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery-bez@1.0.11/src/jquery.bez.js"></script>
-    <script src="https://cdnjs.cloudfare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
 </head>
 <body>
-    <h1>MUSE · ILK</h1>
-    <div id="preloader">
-        <div class="p"><h3>LOADING</h3></div>
+    <div class="content-wrapper content-wrapper-visible">
+        <header class="nav-bar">            
+            <nav>
+                <div class="container">
+                    <div class="menu">
+                        <a href="">HELLO</a>
+                        <a href="">LIVE</a>
+                        <a href="">YOUTUBE-SERVICE</a>
+                        <a href="">CONTACT</a>
+                    </div>
+                    <a href="javascript:void(0);" class="hamburger" >
+                        <div class=" line line-one"></div>
+                        <div class="line line-two"></div>
+                        <div class="line line-three"></div>
+                    </a>
+                </div>
+            </nav>
+        </header>
+    </div>
+
+    <div class="preloader-wrapper">
+        <div class="preloader">
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+        </div>
+
+        <div class="title">
+            <h3>Muse · Ilk</h3>
+        </div>
+        <div class="bar">
+            <div id="fill"></div>
+        </div>
     </div>
 
     <script type="text/javascript">
-        // For Preloader
-        paceOptions = {
-            ajax: true,
-            document: true,
-            eventLag: false
-        };
+    
+        // Preloader Progress Bar
+        var  progress = 0;
+        document.onreadystatechange = function(){
+        if(document.readyState == "interactive") {
+            var allElement = $(".line");
+            var length = allElement.length;
+            for (var i = 0; i<length; i++) {
+                set_element(allElement[i], length);
+                }
+            }
+        }
 
-        Pace.on('done', function() {
-            $('.p').delay(500).animate({top:'30%', opacity: '0'}, 3000, $.bez([0.19, 1, 0.22, 1]));
-            
+        function set_element(element, totalElement) {
+        var percentage = 100 / totalElement;
+        if($(element).length==1) {
+            $("#fill").animate({width:progress+percentage+"%"}, 1000, function() {
+                if(document.getElementById("fill").style.width=="100%") {
+                    $(".preloader-wrapper").fadeOut(500);
+                }
+            });
 
-        $("#preloader").delay(1500).animate({top:'-1000'}, 2000, $.bez([0.19, 1, 0.22, 1]));
+            progress = progress + percentage;
+            }
+        }
 
-        TweenMax.from(".title", 2, {
-            delay: 1.8,
-            y: 10,
-            opacity: 0,
-            ease: Expo.easeInOut
-        });
-    });
+        // Make Main Content Visible
+        const main = document.querySelector('.content-wrapper');
 
-        // // To Hide Preloader
-        // $(window).on("load", function() {
-        //     $("#preloader").fadeOut("slow");
-        // });
+        function init() {
+            setTimeout(() => {
+                main.style.display = 'flex';
+                setTimeout(() => (main.style.opacity = 1), 50);
+            }, 3000);
+        }
+
+        init();
     </script>
+    
+    <script src="app.js"></script>
 </body>
 </html>
