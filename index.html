@@ -13,20 +13,28 @@
         <header class="nav-bar">            
             <nav>
                 <div class="container">
-                    <div class="menu">
-                        <a href="">HELLO</a>
-                        <a href="">LIVE</a>
-                        <a href="">YOUTUBE-SERVICE</a>
-                        <a href="">CONTACT</a>
-                    </div>
                     <a href="javascript:void(0);" class="hamburger" >
                         <div class=" line line-one"></div>
                         <div class="line line-two"></div>
                         <div class="line line-three"></div>
                     </a>
+                    <div class="social-media">
+                        <a href="">FB</a>
+                        <a href="">TWI</a>
+                        <a href="">YT</a>
+                        <a href="">INST</a>
+                    </div>
+                </div>
+                <div class="menu">
+                    <a href="">HELLO</a>
+                    <a href="">LIVE</a>
+                    <a href="">YOUTUBE-SERVICE</a>
+                    <a href="">CONTACT</a>
                 </div>
             </nav>
         </header>
+
+        <div class="cursor"></div>
     </div>
 
     <div class="preloader-wrapper">
@@ -81,9 +89,8 @@
         function init() {
             setTimeout(() => {
                 main.style.display = 'flex';
-                main.style.opacity = 1;
-                // setTimeout(() => (main.style.opacity = 1), 50);
-            }, 3000);
+                setTimeout(() => (main.style.opacity = 1), 50);
+            }, 3350);
         }
 
         init();
