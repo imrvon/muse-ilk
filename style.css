@@ -22,6 +22,16 @@ html, body {
     transform: translate(-50%, -50%);
     pointer-events: none;
     z-index: 1000;
+    transition: 
+    top 50ms linear,
+    left 50ms linear,
+    width 500ms ease,
+    height 500ms ease;
+}
+
+/* Shrunk Cursor */
+.cursor-reduce {
+    transform: scale(0.5);
 }
 
 /* Header Fonts */

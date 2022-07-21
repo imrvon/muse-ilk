@@ -9,6 +9,7 @@ hamburger.addEventListener('click', () => {
 
 // Set Mouse Cursor
 let mouseCursor = document.querySelector('.cursor');
+let navLinks = document.querySelectorAll('.social-media a');
 
 window.addEventListener('mousemove',cursor);
 
@@ -16,6 +17,16 @@ function cursor(e)  {
     mouseCursor.style.top = e.pageY + "px";
     mouseCursor.style.left = e.pageX + "px";
 }
+
+// Reduce Mouse Cursor Size on Hover
+navLinks.forEach(link => {
+    link.addEventListener('mouseover', () => {
+        mouseCursor.classList.add('cursor-reduce');
+    });
+    link.addEventListener('mouseleave', () => {
+        mouseCursor.classList.remove('cursor-reduce');
+    });
+});
 
 // Move Background Image
 document.addEventListener("mousemove", parallax);
