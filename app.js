@@ -16,3 +16,16 @@ function cursor(e)  {
     mouseCursor.style.top = e.pageY + "px";
     mouseCursor.style.left = e.pageX + "px";
 }
+
+// Move Background Image
+document.addEventListener("mousemove", parallax);
+function parallax(a) {
+    this.querySelectorAll(".movenow").forEach(function(move) {
+        var moving_value = move.getAttribute('data-speed');
+
+        var x = (a.clientX * moving_value)/250;
+        var y = (a.clientY * moving_value)/250;
+
+        move.style.transform = "translateX(" + x + "px) translateY(" + y + "px)";
+    });
+}

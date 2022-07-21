@@ -9,7 +9,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 </head>
 <body>
-    <div class="content-wrapper test">
+    <div class="content-wrapper">
         <header class="nav-bar">            
             <nav>
                 <div class="container">
@@ -19,10 +19,11 @@
                         <div class="line line-three"></div>
                     </a>
                     <div class="social-media">
-                        <a href="">FB</a>
-                        <a href="">TWI</a>
-                        <a href="">YT</a>
-                        <a href="">INST</a>
+                        <a href=""><div class="soundcloud icon"></div></a>
+                        <a href=""><div class="facebook icon"></div></a>
+                        <a href=""><div class="instagram icon"></div></a>
+                        <a href=""><div class="youtube icon"></div></a>
+                        <a href=""><div class="twitter icon"></div></a>
                     </div>
                 </div>
                 <div class="menu">
@@ -35,6 +36,14 @@
         </header>
 
         <div class="cursor"></div>
+
+        <main id="main-container">
+            <section class="main-container">
+                <h1 class="movenow" data-speed="-5">Muse · Ilk</h1>
+                <h2 class="movenow" data-speed="-5">Poet & Musicophile</h2>
+                <h3 class="movenow" data-speed="-5">FOR MY MUSE</h3>
+            </section>
+        </main>
     </div>
 
     <div class="preloader-wrapper">
@@ -88,7 +97,7 @@
 
         function init() {
             setTimeout(() => {
-                main.style.display = 'flex';
+                main.style.display = 'block';
                 setTimeout(() => (main.style.opacity = 1), 50);
             }, 3350);
         }
