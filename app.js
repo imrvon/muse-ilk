@@ -9,7 +9,7 @@ hamburger.addEventListener('click', () => {
 
 // Set Mouse Cursor
 let mouseCursor = document.querySelector('.cursor');
-let navLinks = document.querySelectorAll('.social-media a');
+let navLinks = document.querySelectorAll('a');
 
 window.addEventListener('mousemove',cursor);
 
@@ -40,3 +40,11 @@ function parallax(a) {
         move.style.transform = "translateX(" + x + "px) translateY(" + y + "px)";
     });
 }
+
+// Scroll Sections
+
+var firstsec = document.getElementsByClassName('.main-container');
+var secondsec = document.getElementsByClassName('.second-container');
+document.onscroll = function scroll() {
+  secondsec.scrollIntoView({behavior: "smooth"});
+ }

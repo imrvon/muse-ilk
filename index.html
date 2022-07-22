@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muse · Ilk</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 </head>
 <body>
@@ -38,10 +39,39 @@
         <div class="cursor"></div>
 
         <main id="main-container">
-            <section class="main-container">
+            <section class="main-container scroll-item">
                 <h1 class="movenow" data-speed="-5">Muse · Ilk</h1>
                 <h2 class="movenow" data-speed="-5">Poet & Musicophile</h2>
                 <h3 class="movenow" data-speed="-5">FOR MY MUSE</h3>
+            </section>
+
+            <section class="second-container scroll-item">
+                <div class="music-container play">
+                    <div class="music-info">
+                        <p id="title">Water Sign</p>
+                        <div class="progress-container">
+                            <div class="progress"></div>
+                        </div>
+                    </div>
+
+                    <audio src="music/Dizzy - Joshua.mp3" id="audio"></audio>
+                    <div class="img-container">
+                        <img src="img/Dizzy-Joshua.jpg" alt="music-cover" id="cover">
+                    </div>
+                    <div class="navigation">
+                        <button id="prev" class="action-btn">
+                            <i class="fas fa-backward"></i>
+                        </button>
+
+                        <button id="play" class="action-btn action-btn-big">
+                            <i class="fas fa-play"></i>
+                        </button>
+
+                        <button id="next" class="action-btn">
+                            <i class="fas fa-forward"></i>
+                        </button>
+                    </div>
+                </div>
             </section>
         </main>
     </div>
