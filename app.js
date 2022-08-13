@@ -41,10 +41,138 @@ function parallax(a) {
     });
 }
 
-// Scroll Sections
+//  Music Section
+const mute = document.querySelector('.mute');
+const VolumeSlider = document.querySelector('.volume-bar');
+const musicContainer =  document.querySelector('.music-container');
+const playBtn =  document.querySelector('#play');
+const prevBtn =  document.querySelector('#prev');
+const nextBtn =  document.querySelector('#next');
+const audio =  document.querySelector('#audio');
+const musicProgress =  document.querySelector('.progress');
+const progressContainer =  document.querySelector('.progress-container');
+const title =  document.querySelector('#title');
+const cover =  document.querySelector('#cover');
 
-var firstsec = document.getElementsByClassName('.main-container');
-var secondsec = document.getElementsByClassName('.second-container');
-document.onscroll = function scroll() {
-  secondsec.scrollIntoView({behavior: "smooth"});
- }
+
+// Song Titles
+const songs = ['Anson Seabra - Magazines', 'AUGUST 08, Jhene Aiko - Water Sign', 'Bazzi - Renee\'s Song', 'BEAUZ & JVNA - Crazy', 'Dizzy - Joshua', 'Erik Jonasson - Like a Funeral', 'FINNEAS - A Concert Six Months From Now', 'Lauv & LANY - Mean It', 'Maisie Peters - Talking To Strangers', 'Nicklas Sahl - Unsolvable', 'Novo Amor - Opaline', 'The Band CAMINO & Chelsea Cutler - Crying Over You', 'Vance Joy - Emmylou']
+
+// Track Songs
+let songIndex = 12;
+
+// Initially Load Song Info from DOM
+loadSong(songs[songIndex])
+
+// Update Song Details
+function loadSong(song) {
+    title.innerText = song
+    audio.src=`music/${song}.mp3`
+    cover.src=`img/music-art/${song}.jpg`
+}
+
+function playSong() {
+    musicContainer.classList.add('play')
+    playBtn.querySelector('i.fas').classList.remove('fa-play')
+    playBtn.querySelector('i.fas').classList.add('fa-pause')
+
+    audio.play()
+}
+
+function pauseSong() {
+    musicContainer.classList.remove('play')
+    playBtn.querySelector('i.fas').classList.remove('fa-pause')
+    playBtn.querySelector('i.fas').classList.add('fa-play')
+
+    audio.pause()
+}
+
+function prevSong() {
+    songIndex--
+
+    if (songIndex < 0) {
+        songIndex = songs.length - 1
+    }
+
+    loadSong(songs[songIndex])
+
+    playSong()
+}
+
+function nextSong() {
+    songIndex++
+
+    if (songIndex > songs.length - 1) {
+        songIndex = 0
+    }
+
+    loadSong(songs[songIndex])
+
+    playSong()
+}
+
+function updateProgress(e) {
+    const {duration, currentTime} = e.srcElement
+    const progressPercent = (currentTime / duration) * 100
+    musicProgress.style.width = `${progressPercent}%`
+}
+
+function setProgress(e) {
+    const width = this.clientWidth
+    const clickX = e.offsetX
+    const duration = audio.duration
+
+    audio.currentTime = (clickX / width) * duration
+}
+
+// Next and Previous Event Listeners
+prevBtn.addEventListener('click', prevSong)
+nextBtn.addEventListener('click', nextSong)
+
+// Music Event Listeners
+playBtn.addEventListener('click', () => {
+    const isPlaying = musicContainer.classList.contains('play') 
+    
+    if(isPlaying) {
+        pauseSong()
+    } else {
+        playSong()
+    }
+})
+
+// Event Listeners for Audio
+audio.addEventListener('timeupdate', updateProgress)
+
+progressContainer.addEventListener('click', setProgress)
+
+audio.addEventListener('ended', nextSong)
+
+// Mute
+
+VolumeSlider.addEventListener('input', function() {
+    audio.volume= parseInt(this.value)/10;
+    step=.01;
+    min=0;
+    max=1;
+    value=1;
+    }, false);
+
+    mute.addEventListener('click', function() {
+        if(audio.muted) {
+          audio.muted = false;
+           this.querySelector('span').innerHTML = 'fa-volume-high'; 
+        } else {
+          audio.muted = true;
+          this.querySelector('span').innerHTML = 'fa-volume-off';   
+        }
+      }, false);
+
+    // mute.addEventListener('click', function() {
+    //   if(audio.muted) {
+    //     audio.muted = false;
+	// 	 this.querySelector('span').innerHTML = 'Mute'; 
+    //   } else {
+    //     audio.muted = true;
+    //     this.querySelector('span').innerHTML = 'Unmute';   
+    //   }
+    // }, false);

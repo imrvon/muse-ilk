@@ -4,9 +4,14 @@
     padding: 0;
 }
 
+h1, h2, h3, h4, h5, h6, a, span, p {
+    font-family: "MuseIlk", sans-serif;
+}
+
 html, body {
     width: 100%;
     min-height: 100vh;
+    scroll-behavior: smooth;
     cursor: none;
 }
 
@@ -42,12 +47,6 @@ a {
 /* Shrunk Cursor */
 .cursor-reduce {
     transform: scale(0.3);
-}
-
-/* Header Fonts */
-
-h1, h2, h3, h4, h5, h6, a {
-    font-family: "MuseIlk", sans-serif;
 }
 
 /* Fontface */
@@ -415,18 +414,18 @@ h1, h2, h3, h4, h5, h6, a {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    width: 100%;
-    background: -webkit-linear-gradient(top left, rgb(14, 9, 11), rgb(41, 7, 29)); 
-    background: -moz-linear-gradient(top left, rgba(14, 9, 11, 1.0), rgba(41, 7, 29, 1.0)); 
-    background: linear-gradient(to bottom right, rgba(14, 9, 11, 1.0), rgba(41, 7, 29, 1.0));
+    width: 100%; 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.74), rgba(0, 0, 0, 0.726)), url(img/music-girl.jpg);
+    background-repeat: no-repeat;
+    background-position: left bottom;
     color: #f1f1f1;
 }
 
-/* Musi Container */
+/* Music Container */
 .music-container {
-    background-color: #ffffff;
+    background-color: #1A1A1A;
     border-radius: 0.9rem;
-    box-shadow: 0 1.25rem 1.25rem 0 rgba(252, 169, 169, 0.6);
+    box-shadow: 0 0.1rem 0.5rem 0 #979797a9;
     display: flex;
     padding: 1.25rem 1.875rem;
     position: relative;
@@ -441,7 +440,7 @@ h1, h2, h3, h4, h5, h6, a {
 
 .img-container::after{
     content: '';
-    background-color: #ffffff;
+    background-color: #1A1A1A;
     height: 1.25rem;
     width: 1.25rem;
     position: absolute;
@@ -460,7 +459,6 @@ h1, h2, h3, h4, h5, h6, a {
     position: absolute;
     bottom: 0;
     left: 0;
-    
     animation: rotate 3s linear infinite;
     animation-play-state: paused;
 }
@@ -493,13 +491,14 @@ h1, h2, h3, h4, h5, h6, a {
     display: flex;
     flex-direction: column;
     align-self: center;
-    background: linear-gradient(to bottom right, rgb(39, 28, 32), rgb(59, 9, 42));
+    background: #1A1A1A;
+    box-shadow: 0 0 0.5rem 0 #979797a9;
     border-radius: 0.94rem 0.94rem 0 0;
     position: absolute;
     top: 0;
     left: 20px;
     width: calc(100% - 40px);
-    /* opacity: 0; */
+    opacity: 0;
     transform: translateY(0%);
     transition: transform 0.3s ease-in, opacity 0.3s ease-in;
     padding: 0.625rem 0.625rem 0.625rem 9.375rem;
@@ -511,7 +510,7 @@ h1, h2, h3, h4, h5, h6, a {
 }
 
 .action-btn {
-    background-color: #ffffff;
+    background-color: #1A1A1A;
     border: 0;
     color: #dfdbdf;
     font-size: 1.25rem;
@@ -539,9 +538,11 @@ h1, h2, h3, h4, h5, h6, a {
 }
 
 .progress {
-    background-color: #fe8daa;
+    background-color: #FFD700;
     border-radius: 0.3125rem;
     height: 4px;
     width: 0%;
     transition: width 0.1s linear;
 }
+
+/* Mute Container */

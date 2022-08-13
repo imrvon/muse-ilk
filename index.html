@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muse · Ilk</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 </head>
 <body>
@@ -20,11 +20,11 @@
                         <div class="line line-three"></div>
                     </a>
                     <div class="social-media">
-                        <a href=""><div class="soundcloud icon"></div></a>
-                        <a href=""><div class="facebook icon"></div></a>
-                        <a href=""><div class="instagram icon"></div></a>
-                        <a href=""><div class="youtube icon"></div></a>
-                        <a href=""><div class="twitter icon"></div></a>
+                        <a href="#"><div class="soundcloud icon"></div></a>
+                        <a href="#"><div class="facebook icon"></div></a>
+                        <a href="#"><div class="instagram icon"></div></a>
+                        <a href="#"><div class="youtube icon"></div></a>
+                        <a href="#"><div class="twitter icon"></div></a>
                     </div>
                 </div>
                 <div class="menu">
@@ -46,7 +46,7 @@
             </section>
 
             <section class="second-container scroll-item">
-                <div class="music-container play">
+                <div class="music-container">
                     <div class="music-info">
                         <p id="title">Water Sign</p>
                         <div class="progress-container">
@@ -56,22 +56,23 @@
 
                     <audio src="music/Dizzy - Joshua.mp3" id="audio"></audio>
                     <div class="img-container">
-                        <img src="img/Dizzy-Joshua.jpg" alt="music-cover" id="cover">
+                        <img src="img/music-art/Dizzy - Joshua.jpg" alt="music-cover" id="cover">
                     </div>
                     <div class="navigation">
                         <button id="prev" class="action-btn">
                             <i class="fas fa-backward"></i>
                         </button>
-
                         <button id="play" class="action-btn action-btn-big">
                             <i class="fas fa-play"></i>
                         </button>
-
                         <button id="next" class="action-btn">
                             <i class="fas fa-forward"></i>
                         </button>
                     </div>
                 </div>
+
+                <div class="mute"><i class="fa-solid fa-volume-high"></i></div>
+                <input class="volume-bar" type="range" min="0" max="10">
             </section>
         </main>
     </div>
