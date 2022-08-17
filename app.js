@@ -147,32 +147,30 @@ progressContainer.addEventListener('click', setProgress)
 
 audio.addEventListener('ended', nextSong)
 
-// Mute
+
+// Volume Slider
+for (let f of document.querySelectorAll('input[type="range"].volume-bar')) {
+    f.style.setProperty('--value', f.value);
+    f.style.setProperty('--min', f.min == '' ? '0' : f.min);
+    f.style.setProperty('--max', f.max == '' ? '100' : f.max);
+    f.addEventListener('input', () => f.style.setProperty('--value', f.value));
+  }
 
 VolumeSlider.addEventListener('input', function() {
     audio.volume= parseInt(this.value)/10;
-    step=.01;
-    min=0;
-    max=1;
-    value=1;
+    step = .01;
+    min = 0;
+    max = 1;
+    value = 1;     
     }, false);
 
+    // Mute
     mute.addEventListener('click', function() {
         if(audio.muted) {
           audio.muted = false;
-           this.querySelector('span').innerHTML = 'fa-volume-high'; 
+           this.innerHTML = '<i class="fa-solid fa-volume-high"></i>'; 
         } else {
           audio.muted = true;
-          this.querySelector('span').innerHTML = 'fa-volume-off';   
+          this.innerHTML = '<i class="fa-solid fa-volume-off"></i>';
         }
       }, false);
-
-    // mute.addEventListener('click', function() {
-    //   if(audio.muted) {
-    //     audio.muted = false;
-	// 	 this.querySelector('span').innerHTML = 'Mute'; 
-    //   } else {
-    //     audio.muted = true;
-    //     this.querySelector('span').innerHTML = 'Unmute';   
-    //   }
-    // }, false);

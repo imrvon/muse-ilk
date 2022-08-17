@@ -47,32 +47,34 @@
 
             <section class="second-container scroll-item">
                 <div class="music-container">
-                    <div class="music-info">
-                        <p id="title">Water Sign</p>
-                        <div class="progress-container">
-                            <div class="progress"></div>
-                        </div>
-                    </div>
-
-                    <audio src="music/Dizzy - Joshua.mp3" id="audio"></audio>
                     <div class="img-container">
                         <img src="img/music-art/Dizzy - Joshua.jpg" alt="music-cover" id="cover">
                     </div>
-                    <div class="navigation">
-                        <button id="prev" class="action-btn">
-                            <i class="fas fa-backward"></i>
-                        </button>
-                        <button id="play" class="action-btn action-btn-big">
-                            <i class="fas fa-play"></i>
-                        </button>
-                        <button id="next" class="action-btn">
-                            <i class="fas fa-forward"></i>
-                        </button>
+                    <div class="music-details">
+                        <div class="music-info">
+                            <p id="title">Water Sign</p>
+                            <div class="progress-container">
+                                <div class="progress"></div>
+                            </div>
+                        </div>
+                        <audio src="music/Dizzy - Joshua.mp3" id="audio"></audio>
+                        <div class="navigation">
+                            <button id="prev" class="action-btn">
+                                <i class="fas fa-backward"></i>
+                            </button>
+                            <button id="play" class="action-btn action-btn-big">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <button id="next" class="action-btn">
+                                <i class="fas fa-forward"></i>
+                            </button>
+                        </div>
+                        <div class="volume-container">
+                            <div class="mute"><i class="fa-solid fa-volume-high"></i></div>
+                            <input class="volume-bar styled-slider slider-progress" type="range" min="0" max="10" style="width: 25em;">
+                        </div>
                     </div>
-                </div>
-
-                <div class="mute"><i class="fa-solid fa-volume-high"></i></div>
-                <input class="volume-bar" type="range" min="0" max="10">
+                </div>                
             </section>
         </main>
     </div>
