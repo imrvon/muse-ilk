@@ -11,8 +11,11 @@ h1, h2, h3, h4, h5, h6, a, span, p {
 html, body {
     width: 100%;
     min-height: 100vh;
-    scroll-behavior: smooth;
     cursor: none;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 /* Hide Scrollbar */
@@ -499,6 +502,7 @@ a {
 
 .music-info p {
     font-size: 1.5rem;
+    text-align: center;
 }
 
 .music-container.play .music-info {
@@ -737,4 +741,40 @@ input[type=range].styled-slider {
 /* Mute Container */
 .fa-solid {
     font-size: 2rem;
+}
+
+/* Third Section */
+#three {
+    height: 100vh;
+    background-color: #110e1f;
+    position: relative;
+}
+
+.poem-wrapper {
+    width: 30%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+
+.poem-header {
+    background-color: #c1c1c1;
+    width: 100%;
+    padding: 1rem;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.poem-wrapper.active {
+    cursor: move;
+    user-select: none;
+}
+
+.poem-content {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 1rem;
 }

@@ -174,3 +174,49 @@ VolumeSlider.addEventListener('input', function() {
           this.innerHTML = '<i class="fa-solid fa-volume-off"></i>';
         }
       }, false);
+
+    //   Draggable Elements
+
+    const wrapper = document.querySelector(".poem-wrapper")
+    
+    function onDrag({movementX, movementY}) {
+        let getStyle = window.getComputedStyle(wrapper);
+        let left = parseInt(getStyle.left);
+        let top = parseInt(getStyle.top);
+    
+        wrapper.style.left = `${left + movementX}px`;
+        wrapper.style.top = `${top + movementY}px`;
+    }
+
+    wrapper.addEventListener("mousedown", ()=> {
+        wrapper.classList.add("active");
+        wrapper.addEventListener("mousemove", onDrag);
+    });
+
+    document.addEventListener("mouseup", ()=> {
+        wrapper.classList.remove("active");
+        wrapper.removeEventListener("mousemove", onDrag);
+    });
+
+
+    // const wrapper = document.querySelector(".poem-wrapper"),
+    // header = wrapper.querySelector("header");
+    
+    // function onDrag({movementX, movementY}) {
+    //     let getStyle = window.getComputedStyle(wrapper);
+    //     let left = parseInt(getStyle.left);
+    //     let top = parseInt(getStyle.top);
+    
+    //     wrapper.style.left = `${left + movementX}px`;
+    //     wrapper.style.top = `${top + movementY}px`;
+    // }
+
+    // header.addEventListener("mousedown", ()=> {
+    //     header.classList.add("active");
+    //     header.addEventListener("mousemove", onDrag);
+    // });
+
+    // document.addEventListener("mouseup", ()=> {
+    //     header.classList.remove("active");
+    //     header.removeEventListener("mousemove", onDrag);
+    // });
