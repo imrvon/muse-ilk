@@ -751,6 +751,10 @@ input[type=range].styled-slider {
         flex-direction: column;
     }
 
+    .menu a {
+        font-size: 4rem;
+    }
+
     .music-info {
         top: 120%;
         left: 0%;
