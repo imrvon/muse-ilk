@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muse · Ilk</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <div class="content-wrapper">
+        <header class="nav-bar">            
+            <nav>
+                <div class="container">
+                    <a href="javascript:void(0);" class="hamburger" >
+                        <div class=" line line-one"></div>
+                        <div class="line line-two"></div>
+                        <div class="line line-three"></div>
+                    </a>
+                    <div class="social-media">
+                        <a href="#"><div class="soundcloud icon"></div></a>
+                        <a href="https://facebook.com/imrvon"><div class="facebook icon"></div></a>
+                        <a href="https://instagram.com/imrvon"><div class="instagram icon"></div></a>
+                        <a href="#"><div class="youtube icon"></div></a>
+                        <a href="https://twitter.com/imrvon"><div class="twitter icon"></div></a>
+                    </div>
+                </div>
+                <div class="menu">
+                    <a href="#one">HEY</a>
+                    <a href="#two">PLAYLIST</a>
+                    <a href="#three">CONTACT</a>
+                </div>
+            </nav>
+        </header>
+
+        <div class="cursor"></div>
+
+        <main id="main-container">
+            <section id="one" class="main-container scroll-item">
+                <h1 class="movenow" data-speed="-5">Muse · Ilk</h1>
+                <h2 class="movenow" data-speed="-5">Poet & Musicophile</h2>
+                <h3 class="movenow" data-speed="-5">FOR MY MUSE</h3>
+            </section>
+
+            <section id="two" class="second-container scroll-item">
+                <div class="music-container">
+                    <div class="img-container">
+                        <img src="img/music-art/Dizzy - Joshua.jpg" alt="music-cover" id="cover">
+                    </div>
+                    <div class="music-details">
+                        <div class="music-info">
+                            <p id="title">Water Sign</p>
+                            <div class="progress-container">
+                                <div class="progress"></div>
+                            </div>
+                        </div>
+                        <audio src="music/Dizzy - Joshua.mp3" id="audio"></audio>
+                        <div class="navigation">
+                            <button id="prev" class="action-btn">
+                                <i class="fas fa-backward"></i>
+                            </button>
+                            <button id="play" class="action-btn action-btn-big">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <button id="next" class="action-btn">
+                                <i class="fas fa-forward"></i>
+                            </button>
+                        </div>
+                        <div class="volume-container">
+                            <div class="mute"><i class="fa-solid fa-volume-high"></i></div>
+                            <input class="volume-bar styled-slider slider-progress" type="range" min="0" max="10" style="width: 25em;">
+                        </div>
+                    </div>
+                </div>                
+            </section>
+        </main>
+    </div>
+
+    <div class="preloader-wrapper">
+        <div class="preloader">
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+        </div>
+
+        <div class="title">
+            <h3>Muse · Ilk</h3>
+        </div>
+        <div class="bar">
+            <div id="fill"></div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+    
+        // Preloader Progress Bar
+        var  progress = 0;
+        document.onreadystatechange = function(){
+        if(document.readyState == "interactive") {
+            var allElement = $(".line");
+            var length = allElement.length;
+            for (var i = 0; i<length; i++) {
+                set_element(allElement[i], length);
+                }
+            }
+        }
+
+        function set_element(element, totalElement) {
+        var percentage = 100 / totalElement;
+        if($(element).length==1) {
+            $("#fill").animate({width:progress+percentage+"%"}, 1000, function() {
+                if(document.getElementById("fill").style.width=="100%") {
+                    $(".preloader-wrapper").fadeOut(500);
+                }
+            });
+
+            progress = progress + percentage;
+            }
+        }
+
+        // Make Main Content Visible
+        const main = document.querySelector('.content-wrapper');
+
+        function init() {
+            setTimeout(() => {
+                main.style.display = 'block';
+                setTimeout(() => (main.style.opacity = 1), 50);
+            }, 3350);
+        }
+
+        init();
+    </script>
+    
+    <script src="app.js"></script>
+</body>
+</html>
