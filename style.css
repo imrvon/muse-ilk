@@ -391,6 +391,7 @@ a {
 /* Home Page */
 #main-container .main-container {
     display: flex;
+    text-align: center;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -399,6 +400,7 @@ a {
     width: 100%;
     background: url(img/home-bg.jpg);
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .main-container h1 {
@@ -743,38 +745,99 @@ input[type=range].styled-slider {
     font-size: 2rem;
 }
 
-/* Third Section */
-#three {
-    height: 100vh;
-    background-color: #110e1f;
-    position: relative;
+/* ..............................................Media Queries .......................................... */
+@media screen and (min-width: 250px) and (max-width: 768px) {
+    .music-container {
+        flex-direction: column;
+    }
+
+    .music-info {
+        top: 120%;
+        left: 0%;
+    }
+
+    .menu.is-active {
+        flex-direction: column;
+        top: 100px;
+        left: 7%;
+    }
 }
 
-.poem-wrapper {
-    width: 30%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    background-color: #ffffff;
-    border-radius: 5px;
+@media screen and (min-width: 382px) and (max-width: 482px) {
+    html {
+        font-size: 80%;
+    }
 }
 
-.poem-header {
-    background-color: #c1c1c1;
-    width: 100%;
-    padding: 1rem;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+@media screen and (min-width: 292px) and (max-width: 381px) {
+    html {
+        font-size: 60%;
+    }
 }
 
-.poem-wrapper.active {
-    cursor: move;
-    user-select: none;
+@media screen and (min-width: 250px) and (max-width: 291px) {
+    html {
+        font-size: 50%;
+    }
+
+    .main-container h2 {
+        margin-bottom: 1rem;
+    }
 }
 
-.poem-content {
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    padding: 1rem;
+
+@media screen and (min-width: 320px) and (max-width: 420px) {
+    .music-info {
+        padding: unset;
+        left: 15%;
+    }
+
+    .img-container {
+        width: 17rem;
+    }
+
+    .img-container img {
+        height: 17rem;
+    }
+
+    .volume-container {
+        justify-content: center;
+    }
+
+    .volume-container .volume-bar {
+        width: 17em !important;
+    }
+}
+
+@media screen and (min-width: 250px) and (max-width: 342px) {
+    .social-media .icon {
+        width: 24px;
+        height: 24px;
+        border: 1px solid #ffffff;
+    }
+}
+
+@media screen and (min-width: 250px) and (max-width: 319px) {
+    .music-info {
+        padding: unset;
+        left: 15%;
+    }
+
+    .img-container {
+        width: 15rem;
+    }
+
+    .img-container img {
+        height: 15rem;
+    }
+
+    .volume-container {
+        justify-content: center;
+    }
+
+    .volume-container .volume-bar {
+        width: 10em !important;
+    }
+
+    /* I have no idea what's happening */
 }
