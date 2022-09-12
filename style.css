@@ -838,4 +838,6 @@ input[type=range].styled-slider {
     .volume-container .volume-bar {
         width: 10em !important;
     }
+
+    /* I have no idea what's happening */
 }
