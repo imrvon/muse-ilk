@@ -15,4 +15,4 @@ I wanted to create a simple straightforward playlist for my muse. It is open for
 ![Desktop](img/screenshot%20desktop%202.PNG)
 ![Desktop](img/screenshot%20mobile%202.PNG)
 
-[Visit Site](https://cerulean-salamander-19b91d.netlify.app/)
+[Visit Site](https://muse-ilk.netlify.app/)
